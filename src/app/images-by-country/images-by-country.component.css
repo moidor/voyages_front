@@ -1,0 +1,19 @@
+#liste_pays {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#usa, #canada, #southAfrica, #spain, #asia, #nz {
+  display: flex;
+  flex-direction: column;
+}
+
+li.even {
+  color: blue;
+}
+
+li.odd {
+  color: red;
+}
+
+

@@ -1,0 +1,32 @@
+<h3 xmlns="http://www.w3.org/1999/html">Create Destination</h3>
+<div [hidden]="submitted" style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Titre</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="destination.title" name="title">
+    </div>
+
+    <div class="form-group">
+      <label for="article">Article</label>
+      <textarea type="text" class="form-control" id="article" required [(ngModel)]="destination.article" name="article">
+      </textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="image">Image</label>
+      <input type="text" class="form-control" id="image" required [(ngModel)]="destination.image" name="image">
+    </div>
+
+    <div class="form-group">
+      <label for="image">Année</label>
+      <input type="text" class="form-control" id="year" required [(ngModel)]="destination.year" name="year">
+    </div>
+
+    <button type="submit" class="btn btn-success">Ajouter</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>Article ajouté avec succès !</h4>
+  <button class="btn btn-success" (click)="newDestination()">Ajouter</button>
+</div>

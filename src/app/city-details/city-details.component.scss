@@ -1,0 +1,13 @@
+.cityMapDiv {
+  /* Position */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  /* Dimensions */
+  height: 500px;
+  /* Style */
+  border: 5px solid black;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px grey;
+}

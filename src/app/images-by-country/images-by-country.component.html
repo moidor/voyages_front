@@ -1,0 +1,69 @@
+<h2>Galeries par pays</h2>
+<div id="liste_pays">
+  <div id="usa">
+  <h3>Etats-Unis</h3>
+    <ul class="heroes">
+      <li *ngFor="let americanCity of usa;index as i; odd as isOdd; even as isEven"
+          [class.odd]="isOdd" [class.even]="isEven"
+          (click)="onSelect(americanCity)">
+        {{i+1}}. {{americanCity.name}}
+      </li>
+    </ul>
+  </div>
+
+  <div id="canada">
+  <h3>Canada</h3>
+    <ul class="heroes">
+      <li *ngFor="let canadianCity of canada" (click)="onSelect(canadianCity)"
+          class="lovedCityHidden">
+      {{canadianCity.name}}
+      </li>
+    </ul>
+  </div>
+
+  <div id="nz">
+  <h3>Nouvelle-Zélande</h3>
+  <ul class="heroes">
+    <li *ngFor="let kiwiCity of newZealand" (click)="onSelect(kiwiCity)"
+        class="lovedCityHidden">
+      {{kiwiCity.name}}
+    </li>
+  </ul>
+  </div>
+
+  <div id="spain">
+  <h3>Espagne</h3>
+  <ul class="heroes">
+    <li *ngFor="let spanishCity of spain" (click)="onSelect(spanishCity)"
+        class="lovedCityHidden">
+     {{spanishCity.name}}
+    </li>
+  </ul>
+  </div>
+
+  <div id="southAfrica">
+  <h3>Afrique du Sud</h3>
+  <ul class="heroes">
+    <li *ngFor="let southafricanCity of southAfrica" (click)="onSelect(southafricanCity)"
+        class="lovedCityHidden">
+      {{southafricanCity.name}}
+    </li>
+  </ul>
+  </div>
+
+  <div id="asia">
+  <h3>Asie</h3>
+  <ul class="heroes">
+    <li *ngFor="let asiaCity of asia" (click)="onSelect(asiaCity)"
+        class="lovedCityHidden">
+     {{asiaCity.name}}
+    </li>
+  </ul>
+  </div>
+</div>
+<p id="iLoveThatCity"></p>
+<!-- émetteur intégré avec la méthode showCitySelected et son événement passé en paramètre qui représente la ville cliquée -->
+<app-image-by-city (citySelected)="showCityObject($event)" [city]="selectedCity"
+(rate)="onRate($event)"></app-image-by-city>
+
+

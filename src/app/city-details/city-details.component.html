@@ -1,0 +1,4 @@
+<div *ngIf="city" class="cityMapDiv">
+  <p [innerHTML]="city.map | safe: 'html'">
+  </p>
+</div>

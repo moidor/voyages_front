@@ -1,0 +1,36 @@
+nav {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  margin: auto;
+}
+
+nav > p {
+  border: 2px solid darkcyan;
+  border-radius: 5px;
+}
+
+a {
+  color: darkcyan;
+  text-decoration: none;
+  display: block;
+  padding: 20px 50px;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+a:visited {
+  color: darkcyan;
+}
+
+a:hover {
+  background-color: rgba(0, 139, 139, 0.253);
+  color: rgb(21, 116, 116);
+}
+
+/*#galerie {
+  background-image: url("../../src/assets/img/imgNav/newspaper-943004_640.jpg");
+  background-size: cover;
+  color: orangered;
+  font-style: italic;
+}*/

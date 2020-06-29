@@ -1,0 +1,4 @@
+<h3>Destinations</h3>
+<div *ngFor="let destination of destinations | async" style="width: 300px;">
+  <app-destination-details [destination]='destination'></app-destination-details>
+</div>

@@ -1,0 +1,18 @@
+<div *ngIf="destination">
+  <div>
+    <label>Titre : </label> {{destination.title}}
+  </div>
+  <div>
+    <label>Article : </label> {{destination.article}}
+  </div>
+  <div>
+    <label>Année : </label> {{destination.year}}
+  </div>
+  <div>
+    <label>Image : </label> <img [src]="destination.image" alt="destination_image" [title]="destination.title">
+  </div>
+
+  <span class="button is-small btn-danger" (click)='deleteDestination()'>Supprimer la destination</span>
+
+  <hr />
+</div>

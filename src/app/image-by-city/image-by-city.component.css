@@ -1,0 +1,51 @@
+#mainContainer {
+  display: flex;
+}
+
+#container {
+  /* Position */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  /* Dimensions */
+  width: 50%;
+  height: 500px;
+  /* Style */
+  /*border: 5px solid white;*/
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px grey;
+}
+
+img {
+  width: 80%;
+  border: 5px solid white;
+  box-shadow: 2px 2px 3px grey;
+}
+
+img:hover {
+  transform: rotate(3deg);
+}
+
+.flagImg {
+  width: 25%;
+  height: 100px;
+}
+
+.cityContainer.usaStyle {
+  background-color: salmon;
+}
+
+.removeCountryNameClass {
+  display: none;
+}
+
+.showCountryNameClass {
+  display: block;
+}
+
+.applyColor {
+  color: orangered;
+  font-size: 50px;
+  font-style: italic;
+}

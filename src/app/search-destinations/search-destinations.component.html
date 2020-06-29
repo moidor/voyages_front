@@ -1,0 +1,23 @@
+<h3>Rechercher une destination</h3>
+<div style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="year">Année : </label>
+      <input appHighlight type="text" class="form-control" id="year" required [(ngModel)]="year" name="year">
+    </div>
+    <div class="form-group">
+      <label for="year">Titre : </label>
+      <input appHighlight type="text" class="form-control" id="name" required [(ngModel)]="title" name="name">
+    </div>
+
+    <div class="btn-group">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>
+<ul>
+  <li *ngFor="let destination of destinations">
+    <h4>{{destination.id}} - {{destination.title}} {{destination.article}} {{destination.year}}</h4>
+    <img [src]="destination.image" alt="photo_destination">
+  </li>
+</ul>
