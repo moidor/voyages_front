@@ -43,7 +43,7 @@ setInterval("intervalHandler()", 1000);
 
 //***** LOS ANGELES *****
 function intervalHandlerLosAngeles() {
-  decalageHoraireLosAngeles = -9;
+  decalageHoraireLosAngeles = 15;
   let day = new Date();
 
   let secondes = day.getSeconds();

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {City} from '../classes/City';
 import { CITIES } from '../classes/cities-mock';
 
@@ -8,10 +8,20 @@ import { CITIES } from '../classes/cities-mock';
   styleUrls: ['./images-by-country.component.css']
 })
 export class ImagesByCountryComponent implements OnInit {
+  isShown = false;
+  toggleDisplay() {
+    this.isShown = !this.isShown;
+  }
+
+  scrollToElement($element): void {
+    console.log($element);
+    $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+  }
 
   // Listes des pays
   city: City[];
-  usa = CITIES.slice(0, 6).sort();
+  cities = CITIES;
+  usa = CITIES.slice(0, 6);
   canada = CITIES.slice(6, 7);
   asia = CITIES.slice(7, 11);
   newZealand = CITIES.slice(11, 16);
@@ -22,6 +32,9 @@ export class ImagesByCountryComponent implements OnInit {
   selectedCity: City;
   onSelect(city: City): void {
     this.selectedCity = city;
+    if (this.isShown) {
+      this.isShown = !this.isShown;
+    }
   }
 
   constructor() { }

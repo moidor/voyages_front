@@ -1,6 +1,7 @@
 <div id="mainContainer">
-
+  
   <div *ngIf="city" id="container" class="cityContainer" [ngClass]="includesSan()">
+    <button class="btn btn-danger" (click)="closeWindow()">Fermer</button>
     <h2 [class.applyColor]="applyColor">{{city.name | uppercase}}</h2>
     <div>
       <label>name:
@@ -11,7 +12,7 @@
       *ngIf="isImageVisible(); else noImage">
 
       <ng-template #noImage>
-        <p>No image is available.</p>
+        <p>No image available.</p>
       </ng-template>
 
   <!-- Affichage du drapeau du pays selon la ville sélectionnée -->

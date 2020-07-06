@@ -13,6 +13,17 @@ export class ImageByCityComponent implements OnInit {
   // Cet input permettra d'afficher la ville sélectionnée dans son sélecteur intégré dans le composant parent
   @Input() city: City;
 
+  @Input() isShown: boolean;
+
+  // Emitter
+  @Output() closeWindowEmitter = new EventEmitter();
+
+  closeWindow() {
+    this.closeWindowEmitter.emit(
+      this.isShown = !this.isShown
+    );
+  }
+
   // Envoi d'un émetteur hors du composant afin de communiquer des données de villes avec d'autres composants parents
   // tslint:disable-next-line:no-output-rename
   @Output('citySelected')

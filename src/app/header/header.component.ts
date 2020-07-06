@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   displayTimeHonolulu: string;
 
   montreal = setInterval(() => {
-    return this.displayTimeMontreal = this.intervalHandler('Montréal', -6);
+    return this.displayTimeMontreal = this.intervalHandler('Montréal', 18);
   }, 1000);
 
   honolulu = setInterval(() => {
