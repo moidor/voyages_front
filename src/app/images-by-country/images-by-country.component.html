@@ -1,5 +1,6 @@
 <h2>Galeries par pays</h2>
 <div #cityWindowDisplay>
+  <!-- émetteur intégré avec la méthode showCitySelected et son événement passé en paramètre qui représente la ville cliquée -->
   <app-image-by-city (closeWindowEmitter)="toggleDisplay($event)" *ngIf="!isShown" 
   (citySelected)="showCityObject($event)" [city]="selectedCity"
   (rate)="onRate($event)" ></app-image-by-city>
@@ -7,17 +8,15 @@
   <h3>États-Unis</h3>
   <div class="card-columns">
     <div *ngFor="let city of usa" class="card">
-      <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/07/32/00/f8.jpg" 
-      class="card-img-top" alt="...">
+      <img [src]="city.image" class="card-img-top" [alt]="city.name">
       <div class="card-body">
         <h5 class="card-title">{{city.name}} {{city.country}}</h5>
         <p class="card-text">
           <button (click)="scrollToElement(cityWindowDisplay)" routerLinkActive="router-link-active" class="btn btn-info" (click)="onSelect(city)">Afficher</button>
-          <!-- <a routerLink="../city" routerLinkActive="active" (click)="onSelect(city)">Afficher</a> -->
         </p>
       </div>
       <div class="card-footer">
-        <small class="text-muted">Visitée en ...</small>
+        <small class="text-muted">Visitée en {{city.yearOfVisit}}</small>
       </div>
     </div>
   </div>
@@ -26,17 +25,15 @@
   <h3>Canada</h3>
   <div class="card-columns">
     <div *ngFor="let city of canada" class="card">
-      <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/07/32/00/f8.jpg" 
-      class="card-img-top" alt="...">
+      <img [src]="city.image" class="card-img-top" [alt]="city.name">
       <div class="card-body">
         <h5 class="card-title">{{city.name}} {{city.country}}</h5>
         <p class="card-text">
           <button (click)="scrollToElement(cityWindowDisplay)" routerLinkActive="router-link-active" class="btn btn-info" (click)="onSelect(city)">Afficher</button>
-          <!-- <a routerLink="../city" routerLinkActive="active" (click)="onSelect(city)">Afficher</a> -->
         </p>
       </div>
       <div class="card-footer">
-        <small class="text-muted">Visitée en ...</small>
+        <small class="text-muted">Visitée en {{city.yearOfVisit}}</small>
       </div>
     </div>
   </div>
@@ -44,17 +41,15 @@
   <h3>Nouvelle-Zélande</h3>
   <div class="card-columns">
     <div *ngFor="let city of newZealand" class="card">
-      <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/07/32/00/f8.jpg" 
-      class="card-img-top" alt={{city.name}} title={{city.name}}>
+      <img [src]="city.image" class="card-img-top" [alt]="city.name">
       <div class="card-body">
         <h5 class="card-title">{{city.name}} {{city.country}}</h5>
         <p class="card-text">
           <button (click)="scrollToElement(cityWindowDisplay)" routerLinkActive="router-link-active" class="btn btn-info" (click)="onSelect(city)">Afficher</button>
-          <!-- <a routerLink="../city" routerLinkActive="active" (click)="onSelect(city)">Afficher</a> -->
         </p>
       </div>
       <div class="card-footer">
-        <small class="text-muted">Visitée en ...</small>
+        <small class="text-muted">Visitée en {{city.yearOfVisit}}</small>
       </div>
     </div>
   </div>
@@ -62,8 +57,7 @@
   <h3>Espagne</h3>
   <div class="card-columns">
     <div *ngFor="let city of spain" class="card">
-      <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/07/32/00/f8.jpg" 
-      class="card-img-top" alt="...">
+      <img [src]="city.image" class="card-img-top" [alt]="city.name">
       <div class="card-body">
         <h5 class="card-title">{{city.name}} {{city.country}}</h5>
         <p class="card-text">
@@ -71,7 +65,7 @@
         </p>
       </div>
       <div class="card-footer">
-        <small class="text-muted">Visitée en ...</small>
+        <small class="text-muted">Visitée en {{city.yearOfVisit}}</small>
       </div>
     </div>
   </div>
@@ -79,8 +73,7 @@
   <h3>Afrique du Sud</h3>
   <div class="card-columns">
     <div *ngFor="let city of southAfrica" class="card">
-      <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/07/32/00/f8.jpg" 
-      class="card-img-top" alt="...">
+      <img [src]="city.image" class="card-img-top" [alt]="city.name">
       <div class="card-body">
         <h5 class="card-title">{{city.name}} {{city.country}}</h5>
         <p class="card-text">
@@ -89,7 +82,7 @@
         </p>
       </div>
       <div class="card-footer">
-        <small class="text-muted">Visitée en ...</small>
+        <small class="text-muted">Visitée en {{city.yearOfVisit}}</small>
       </div>
     </div>
   </div>
@@ -97,22 +90,15 @@
   <h3>Asie</h3>
   <div class="card-columns">
     <div *ngFor="let city of asia" class="card">
-      <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/07/32/00/f8.jpg" 
-      class="card-img-top" alt="...">
+      <img [src]="city.image" class="card-img-top" [alt]="city.name">
       <div class="card-body">
-        <h5 class="card-title">{{city.name}} {{city.country}}</h5>
+        <h5 class="card-title">{{city.name}}</h5>
         <p class="card-text">
           <button (click)="scrollToElement(cityWindowDisplay)" routerLinkActive="router-link-active" class="btn btn-info" (click)="onSelect(city)">Afficher</button>
-          <!-- <a routerLink="../city" routerLinkActive="active" (click)="onSelect(city)">Afficher</a> -->
         </p>
       </div>
       <div class="card-footer">
-        <small class="text-muted">Visitée en ...</small>
+        <small class="text-muted">Visitée en {{city.yearOfVisit}}</small>
       </div>
     </div>
   </div>
-<!-- émetteur intégré avec la méthode showCitySelected et son événement passé en paramètre qui représente la ville cliquée -->
-<!-- <app-image-by-city (citySelected)="showCityObject($event)" [city]="selectedCity"
-(rate)="onRate($event)"></app-image-by-city> -->
-
-

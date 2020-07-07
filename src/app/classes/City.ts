@@ -1,7 +1,8 @@
 export class City {
-  id: number;
+  id?: number;
   name: string;
   image: string;
   country: string;
+  yearOfVisit: number;
   map?: string;
 }

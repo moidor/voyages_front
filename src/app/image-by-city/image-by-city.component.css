@@ -49,3 +49,7 @@ img:hover {
   font-size: 50px;
   font-style: italic;
 }
+
+.flotte {
+  float: left;
+}

@@ -21,12 +21,12 @@ export class ImagesByCountryComponent implements OnInit {
   // Listes des pays
   city: City[];
   cities = CITIES;
-  usa = CITIES.slice(0, 6);
-  canada = CITIES.slice(6, 7);
-  asia = CITIES.slice(7, 11);
-  newZealand = CITIES.slice(11, 16);
-  southAfrica = CITIES.slice(16, 17);
-  spain = CITIES.slice(17, 21);
+  usa = CITIES.slice(0, 10);
+  canada = CITIES.slice(10, 11);
+  asia = CITIES.slice(11, 16);
+  newZealand = CITIES.slice(16, 21);
+  southAfrica = CITIES.slice(21, 22);
+  spain = CITIES.slice(22, 27);
 
   // Ville sélectionnée : le paramètre "city" de type "City" sera représenté par "this.selectedCity"
   selectedCity: City;
