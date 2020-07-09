@@ -1,5 +1,6 @@
 #mainContainer {
   display: flex;
+  margin-bottom: 50px;
 }
 
 #container {
@@ -17,39 +18,53 @@
   box-shadow: 3px 3px 3px grey;
 }
 
-img {
-  width: 80%;
-  border: 5px solid white;
-  box-shadow: 2px 2px 3px grey;
-}
-
-img:hover {
-  transform: rotate(3deg);
-}
-
 .flagImg {
-  width: 25%;
-  height: 100px;
+  width: 15%;
+  height: 100%;
+  border: 2px solid white;
 }
 
+.removeMap {
+  display: none;
+}
+
+.showMap {
+  display: block;
+}
+
+h1 {
+  margin-right: 20px;
+}
+
+.titleImg {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Couleur de fond en fonction des pays */
 .cityContainer.usaStyle {
   background-color: salmon;
 }
 
-.removeCountryNameClass {
-  display: none;
+.cityContainer.canadaStyle {
+  background-color: #ec8b8b;
 }
 
-.showCountryNameClass {
-  display: block;
+.cityContainer.newZealandStyle {
+  background-color: #55c4d8;
 }
 
-.applyColor {
-  color: orangered;
-  font-size: 50px;
-  font-style: italic;
+.cityContainer.southAfricaStyle {
+  background-color: #357050;
 }
 
-.flotte {
-  float: left;
+.cityContainer.spainStyle {
+  background-color: #FFB626;
 }
+
+.cityContainer.asiaStyle {
+  background-color: rgb(185, 139, 77);
+}
+

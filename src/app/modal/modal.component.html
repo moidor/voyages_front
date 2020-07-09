@@ -1,0 +1,9 @@
+<!-- The Modal -->
+<div *ngIf="city" id="myModal" [ngClass]="{'applyBlock modal': true}" (click)="closeModalClickingOut()">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <p>{{city.name}}</p>
+    <p>AJOUTER UN CARROUSEL ICI</p>
+  </div>
+</div>

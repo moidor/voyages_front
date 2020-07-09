@@ -8,15 +8,9 @@ import { CITIES } from '../classes/cities-mock';
   styleUrls: ['./images-by-country.component.css']
 })
 export class ImagesByCountryComponent implements OnInit {
-  isShown = false;
-  toggleDisplay() {
-    this.isShown = !this.isShown;
-  }
 
-  scrollToElement($element): void {
-    console.log($element);
-    $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
-  }
+  constructor() { }
+  isShown = false;
 
   // Listes des pays
   city: City[];
@@ -30,6 +24,15 @@ export class ImagesByCountryComponent implements OnInit {
 
   // Ville sélectionnée : le paramètre "city" de type "City" sera représenté par "this.selectedCity"
   selectedCity: City;
+
+  toggleDisplay() {
+    this.isShown = !this.isShown;
+  }
+
+  scrollToElement($element): void {
+    $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+  }
+
   onSelect(city: City): void {
     this.selectedCity = city;
     if (this.isShown) {
@@ -37,25 +40,11 @@ export class ImagesByCountryComponent implements OnInit {
     }
   }
 
-  constructor() { }
-
   ngOnInit() {
   }
 
   // Méthode showCitySelected() qui sera appelée avec une ville en paramètre dans l'instance de image-by-city grâce à l'émetteur
   showCityObject(city: City) {
     console.log('City : ', city);
-  }
-
-  // La méthode "iLoveIt()" émet une ville via la méthode native "emit()" et sera cliquée dans le template.
-  // Une fois cliquée, l'émetteur envoie '(rate)="onRate($event)"' au template du composant parent "image-by-country"
-  // La méthode "onRate()" se chargera de modifier le template et d'y faire pénétrer l'appréciation
-  onRate(appreciation: string) {
-    appreciation = 'I loved ' + this.selectedCity.name;
-    const lovedCity = document.getElementById('iLoveThatCity');
-    lovedCity.innerHTML = appreciation;
-    const styleElement = document.querySelector('.lovedCityHidden');
-    styleElement.setAttribute('class', 'loveCity');
-    console.log(styleElement);
   }
 }

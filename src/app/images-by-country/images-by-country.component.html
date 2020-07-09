@@ -1,18 +1,18 @@
 <h2>Galeries par pays</h2>
 <div #cityWindowDisplay>
-  <!-- émetteur intégré avec la méthode showCitySelected et son événement passé en paramètre qui représente la ville cliquée -->
+  <!-- émetteur intégré avec la méthode showCityObject et son événement passé en paramètre qui représente la ville cliquée -->
   <app-image-by-city (closeWindowEmitter)="toggleDisplay($event)" *ngIf="!isShown" 
-  (citySelected)="showCityObject($event)" [city]="selectedCity"
-  (rate)="onRate($event)" ></app-image-by-city>
+  (citySelected)="showCityObject($event)" [city]="selectedCity"></app-image-by-city>
 
   <h3>États-Unis</h3>
   <div class="card-columns">
     <div *ngFor="let city of usa" class="card">
       <img [src]="city.image" class="card-img-top" [alt]="city.name">
       <div class="card-body">
-        <h5 class="card-title">{{city.name}} {{city.country}}</h5>
+        <h5 class="card-title">{{city.name}}</h5>
         <p class="card-text">
-          <button (click)="scrollToElement(cityWindowDisplay)" routerLinkActive="router-link-active" class="btn btn-info" (click)="onSelect(city)">Afficher</button>
+          <button (click)="scrollToElement(cityWindowDisplay)" routerLinkActive="router-link-active" class="btn btn-info" 
+          (click)="onSelect(city)">Afficher</button>
         </p>
       </div>
       <div class="card-footer">
@@ -27,7 +27,7 @@
     <div *ngFor="let city of canada" class="card">
       <img [src]="city.image" class="card-img-top" [alt]="city.name">
       <div class="card-body">
-        <h5 class="card-title">{{city.name}} {{city.country}}</h5>
+        <h5 class="card-title">{{city.name}}</h5>
         <p class="card-text">
           <button (click)="scrollToElement(cityWindowDisplay)" routerLinkActive="router-link-active" class="btn btn-info" (click)="onSelect(city)">Afficher</button>
         </p>
@@ -43,7 +43,7 @@
     <div *ngFor="let city of newZealand" class="card">
       <img [src]="city.image" class="card-img-top" [alt]="city.name">
       <div class="card-body">
-        <h5 class="card-title">{{city.name}} {{city.country}}</h5>
+        <h5 class="card-title">{{city.name}}</h5>
         <p class="card-text">
           <button (click)="scrollToElement(cityWindowDisplay)" routerLinkActive="router-link-active" class="btn btn-info" (click)="onSelect(city)">Afficher</button>
         </p>
@@ -59,7 +59,7 @@
     <div *ngFor="let city of spain" class="card">
       <img [src]="city.image" class="card-img-top" [alt]="city.name">
       <div class="card-body">
-        <h5 class="card-title">{{city.name}} {{city.country}}</h5>
+        <h5 class="card-title">{{city.name}}</h5>
         <p class="card-text">
           <button (click)="scrollToElement(cityWindowDisplay)" routerLinkActive="router-link-active" class="btn btn-info" (click)="onSelect(city)">Afficher</button>
         </p>
@@ -75,7 +75,7 @@
     <div *ngFor="let city of southAfrica" class="card">
       <img [src]="city.image" class="card-img-top" [alt]="city.name">
       <div class="card-body">
-        <h5 class="card-title">{{city.name}} {{city.country}}</h5>
+        <h5 class="card-title">{{city.name}}</h5>
         <p class="card-text">
           <button (click)="scrollToElement(cityWindowDisplay)" routerLinkActive="router-link-active" class="btn btn-info" (click)="onSelect(city)">Afficher</button>
           <!-- <a routerLink="../city" routerLinkActive="active" (click)="onSelect(city)">Afficher</a> -->

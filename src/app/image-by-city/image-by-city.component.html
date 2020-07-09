@@ -1,39 +1,32 @@
 <div id="mainContainer">
   
-  <div *ngIf="city" id="container" class="cityContainer" [ngClass]="includesSan()">
-    <h2 [class.applyColor]="applyColor">{{city.name | uppercase}}</h2>
-    <!-- <div>
-      <label>name:
-        <input [(ngModel)]="city.name" placeholder="name"/>
-      </label>
-    </div> -->
-      <!-- <img [src]="city.image" [alt]="city.name" [title]="city.name"
-      *ngIf="isImageVisible(); else noImage">
+  <div *ngIf="city" id="container" class="cityContainer" [ngClass]="applyBackgroundColor()">
+      <!-- Affichage du drapeau du pays selon la ville sélectionnée -->
+      <div class="titleImg" [ngSwitch]="city.country">
+        <h1>{{city.name | uppercase}}</h1>
 
-      <ng-template #noImage>
-        <p>No image available.</p>
-      </ng-template> -->
+        <img *ngSwitchCase="'États-Unis'" src="../../assets/img/flags/us_flag.png" class="flagImg">
+        <img *ngSwitchCase="'Canada'" src="../../assets/img/flags/canada_flag.png" class="flagImg">
+        <img *ngSwitchCase="'Malaisie'" src="../../assets/img/flags/malaysia_flag.png" class="flagImg">
+        <img *ngSwitchCase="'Singapour'" src="../../assets/img/flags/singapore_flag.png" class="flagImg">
+        <img *ngSwitchCase="'Nouvelle-Zélande'" src="../../assets/img/flags/new_zealand_flag.png" class="flagImg">
+        <img *ngSwitchCase="'Afrique du Sud'" src="../../assets/img/flags/south_africa_flag.png" class="flagImg">
+        <img *ngSwitchCase="'Espagne'" src="../../assets/img/flags/spain_flag.png" class="flagImg">
+      </div>
 
-  <!-- Affichage du drapeau du pays selon la ville sélectionnée -->
-    <p [ngSwitch]="city.country">
-      <img *ngSwitchCase="'États-Unis'" src="../../assets/img/flags/us_flag.png" class="flagImg">
-      <img *ngSwitchCase="'Canada'" src="../../assets/img/flags/canada_flag.png" class="flagImg">
-      <img *ngSwitchCase="'Malaisie'" src="../../assets/img/flags/malaysia_flag.png" class="flagImg">
-      <img *ngSwitchCase="'Singapour'" src="../../assets/img/flags/singapore_flag.png" class="flagImg">
-      <img *ngSwitchCase="'Nouvelle-Zélande'" src="../../assets/img/flags/new_zealand_flag.png" class="flagImg">
-      <img *ngSwitchCase="'Afrique du Sud'" src="../../assets/img/flags/south_africa_flag.png" class="flagImg">
-      <img *ngSwitchCase="'Espagne'" src="../../assets/img/flags/spain_flag.png" class="flagImg">
-    </p>
+      <!-- Fenêtre modale avec un bouton -->
+      <button class="btn btn-primary btn-lg" id="myBtn" (click)="openModal(city)">Afficher le carrousel</button>
+      <app-modal (closeModalEmitter)="toggleDisplay($event)" *ngIf="!isDisplayed"
+      [city]="selectedCityModal" (closeClickingOutEmitter)="toggleDisplay($event)"></app-modal>
 
-    <!-- <button (click)="showCountryName()">Which country ?</button>
-    <div class="removeCountryNameClass" id="countryNameDiv"></div>
-    <button (click)="changeBackgroundColor()">Change title</button>
-    <button (click)="iLoveIt()" [style.color]="'red'">I love that city !</button>
-    <button (click)="cityDetails()">Read output object city</button> -->
-    <button class="btn btn-warning" (click)="onSelect(city)">Afficher la carte</button>
-    <button class="btn btn-danger" (click)="closeWindow()">Fermer</button>
+      <button class="btn btn-warning btn-lg" (click)="onSelect(city)">
+        {{ !isMapShown ? 'Afficher la carte' : 'Masquer' }}
+      </button>
+      <button class="btn btn-danger btn-sm" (click)="closeWindow()">Fermer</button>
   </div>
-  <!-- L'Input [city] passe en données la variable selectedCity, de type "City" -->
-  <app-city-details [city]="selectedCity" class="removeCountryNameClass" id="cityMapDiv"></app-city-details>
-
+  <!-- L'Input [city] passe en données la variable selectedCity, de type "City"
+  la classe "removeMap" sert à masquer dès le chargement ce composant enfant et 
+  la carte sera affichée une fois onSelect() recliquée car il y a "cityMapDiv.classList.toggle('showMap');"-->
+  <app-city-details [city]="selectedCity" class="removeMap" id="cityMapDiv"></app-city-details>
+  
 </div>

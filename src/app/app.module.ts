@@ -28,6 +28,9 @@ import localeFr from '@angular/common/locales/fr';
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import { HighlightDirective } from './directives/highlight.directive';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalComponent } from './modal/modal.component';
 registerLocaleData(localeFr, 'fr-FR');
 
 @NgModule({
@@ -46,13 +49,15 @@ registerLocaleData(localeFr, 'fr-FR');
     SafePipe,
     LoginComponent,
     ErrorComponent,
-    HighlightDirective
+    HighlightDirective,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
   ],
   providers: [DestinationService,
   RestapiService,
