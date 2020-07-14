@@ -12,10 +12,11 @@
         <img *ngSwitchCase="'Nouvelle-Zélande'" src="../../assets/img/flags/new_zealand_flag.png" class="flagImg">
         <img *ngSwitchCase="'Afrique du Sud'" src="../../assets/img/flags/south_africa_flag.png" class="flagImg">
         <img *ngSwitchCase="'Espagne'" src="../../assets/img/flags/spain_flag.png" class="flagImg">
+        <img *ngSwitchCase="'Japon'" src="../../assets/img/flags/japan_flag.png" class="flagImg">
       </div>
 
-      <!-- Fenêtre modale avec un bouton -->
-      <button class="btn btn-primary btn-lg" id="myBtn" (click)="openModal(city)">Afficher le carrousel</button>
+      <!-- Fenêtre modale -->
+      <button class="btn btn-primary btn-lg" id="myBtn" (click)="openModal(city)">Afficher la galerie</button>
       <app-modal (closeModalEmitter)="toggleDisplay($event)" *ngIf="!isDisplayed"
       [city]="selectedCityModal" (closeClickingOutEmitter)="toggleDisplay($event)"></app-modal>
 

@@ -66,12 +66,12 @@ export class ImageByCityComponent implements OnInit {
     }
   } */
 
-  applyBlock() {
+  /* applyBlock() {
     if (this.city.name.includes('San')) {
       // Renvoie la classe css 'usaStyle'
       return 'usaStyle';
     }
-  }
+  } */
 
   /* Couleur de fond en fonction des pays */
   applyBackgroundColor() {

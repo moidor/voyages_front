@@ -1,9 +1,29 @@
-<!-- The Modal -->
-<div *ngIf="city" id="myModal" [ngClass]="{'applyBlock modal': true}" (click)="closeModalClickingOut()">
+<!-- The Modal (click)="closeModalClickingOut()" -->
+<div *ngIf="city" id="myModal" [ngClass]="{'applyBlock modal': true}" >
   <!-- Modal content -->
   <div class="modal-content">
-    <span class="close" (click)="closeModal()">&times;</span>
+    <span class="close" (click)="closeModal()" (window:keyup.esc)="closeModal()">&times;</span>
     <p>{{city.name}}</p>
-    <p>AJOUTER UN CARROUSEL ICI</p>
+    <!-- <img *ngFor="let city of city.album" [src]="city" alt="city"> -->
+    <!-- Galerie d'images -->
+    <div class="card-columns" >
+      <div class="row">
+        <div class="col">
+          <img (click)="openModalPic($event)" *ngFor="let city of city.album" 
+          [src]="city" alt="city" class="img-thumbnail">
+        </div>
+      </div>
+    </div>
+      <!-- The Modal   -->
+      <div id="modalPic" *ngIf="show" [ngClass]="['applyBlock', 'modal']">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close" (click)="closeModalPic()">&times;</span>
+          <img [src]="clickedImg" alt="" id="cadre" (window:keyup.esc)="closeModalPic()">
+          <input #box (keyup.enter)="onEnter(box.value)">
+    <p>{{value}}</p>
+        </div>
+      </div>
+
   </div>
 </div>

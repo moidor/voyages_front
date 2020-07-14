@@ -5,4 +5,5 @@ export class City {
   country: string;
   yearOfVisit: number;
   map?: string;
+  album?: string[];
 }
