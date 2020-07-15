@@ -8,7 +8,7 @@
     <!-- Galerie d'images -->
     <div class="card-columns" >
       <div class="row">
-        <div class="col">
+        <div class="col-lg-12">
           <img (click)="openModalPic($event)" *ngFor="let city of city.album" 
           [src]="city" alt="city" class="img-thumbnail">
         </div>
@@ -20,8 +20,6 @@
         <div class="modal-content">
           <span class="close" (click)="closeModalPic()">&times;</span>
           <img [src]="clickedImg" alt="" id="cadre" (window:keyup.esc)="closeModalPic()">
-          <input #box (keyup.enter)="onEnter(box.value)">
-    <p>{{value}}</p>
         </div>
       </div>
 

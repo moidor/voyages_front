@@ -51,19 +51,4 @@ export class ModalComponent implements OnInit {
       this.clickedImg = event.target.src;
       return this.clickedImg;
   }
-
-  value = '';
-  onEnter(value: string) { this.value = value; }
-  closePressingEnter(event: KeyboardEvent) {
-    const modal = document.getElementById('modalPic');
-    // PRESS ENTER
-   
-      this.show = !this.show;
-    
-    /* window.onclick = (event) => {
-        if (event.target === modal) {
-          this.show = !this.show;
-        }
-      }; */
-  }
 }
