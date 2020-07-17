@@ -10,10 +10,21 @@ import { DestinationsListComponent } from '../destinations-list/destinations-lis
 })
 export class DestinationDetailsComponent implements OnInit {
   @Input() destination: Destination;
+  showDeleteModal = false;
+  deleted = false;
+
   constructor(private destinationService: DestinationService,
               private listDestination: DestinationsListComponent) { }
 
   ngOnInit() {
+  }
+
+  openDeleteModal() {
+    this.showDeleteModal = !this.showDeleteModal;
+  }
+
+  closeModal() {
+    this.showDeleteModal = !this.showDeleteModal;
   }
 
   /*updateDestination(id: number, value: any) {
@@ -33,8 +44,11 @@ export class DestinationDetailsComponent implements OnInit {
         data => {
           console.log(data);
           this.listDestination.reloadData();
+          this.deleted = !this.deleted;
         },
         error => console.log(error));
+    this.showDeleteModal = !this.showDeleteModal;
+    this.deleted = !this.deleted;
   }
 
 }

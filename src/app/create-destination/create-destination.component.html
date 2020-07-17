@@ -1,4 +1,4 @@
-<h3 xmlns="http://www.w3.org/1999/html">Create Destination</h3>
+<h3 xmlns="http://www.w3.org/1999/html">Ajouter un article</h3>
 <div [hidden]="submitted" style="width: 300px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
@@ -19,7 +19,7 @@
 
     <div class="form-group">
       <label for="image">Année</label>
-      <input type="text" class="form-control" id="year" required [(ngModel)]="destination.year" name="year">
+      <input type="number" class="form-control" id="year" required [(ngModel)]="destination.year" name="year">
     </div>
 
     <button type="submit" class="btn btn-success">Ajouter</button>

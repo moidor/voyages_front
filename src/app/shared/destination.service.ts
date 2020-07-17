@@ -42,6 +42,11 @@ export class DestinationService {
     return this.http.get(`${this.baseUrl}/title/${title}`);
   }
 
+  // Chercher une destination par un mot contenu dans l'article
+  getDestinationByArticle(article: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/article/${article}`);
+  }
+
   /* GET heroes whose name contains search term
   searchDestinationName(term: string): Observable<Destination[]> {
     if (!term.trim()) {

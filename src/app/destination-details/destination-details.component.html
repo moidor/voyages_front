@@ -1,18 +1,36 @@
-<div *ngIf="destination">
-  <div>
-    <label>Titre : </label> {{destination.title}}
-  </div>
-  <div>
-    <label>Article : </label> {{destination.article}}
-  </div>
-  <div>
-    <label>Année : </label> {{destination.year}}
-  </div>
-  <div>
-    <label>Image : </label> <img [src]="destination.image" alt="destination_image" [title]="destination.title">
-  </div>
+<div [hidden]="deleted">
+  <div *ngIf="destination">
+    <div>
+      <label>Titre : </label> {{destination.title}}
+    </div>
+    <div>
+      <label>Article : </label> {{destination.article}}
+    </div>
+    <div>
+      <label>Année : </label> {{destination.year}}
+    </div>
+    <div>
+      <label>Image : </label> <img [src]="destination.image" [alt]="destination_image" [title]="destination.title">
+    </div>
 
-  <span class="button is-small btn-danger" (click)='deleteDestination()'>Supprimer la destination</span>
+    <button class="btn btn-danger btn-sm" (click)="openDeleteModal()">Supprimer</button>
+    <!-- The Modal   -->
+    <div id="modalPic" *ngIf="showDeleteModal" [ngClass]="['applyBlock', 'modal']"
+    (window:keyup.esc)="closeModal()">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <p>Confirmez-vous la suppression de cet article ?</p>
+        <button class="btn btn-danger" (click)='deleteDestination()'>Oui</button>
+      </div>
+    </div>
 
-  <hr />
+    <hr />
+  </div>
+</div>
+
+<!-- Apparition une fois l'article supprimé -->
+<div [hidden]="!deleted">
+  <h4>Article supprimé avec succès !</h4>
+  <!-- <button class="btn btn-success" (click)="newDestination()">Ajouter</button> -->
 </div>

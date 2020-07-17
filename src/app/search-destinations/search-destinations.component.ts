@@ -10,13 +10,13 @@ import { DestinationService } from '../shared/destination.service';
 export class SearchDestinationsComponent implements OnInit {
   id: number;
   title: string;
+  article: string;
   year: number;
   destinations: Destination[];
 
   constructor(private destinationService: DestinationService) { }
 
   ngOnInit() {
-    this.title = '';
   }
 
   private searchDestinations() {
@@ -29,8 +29,14 @@ export class SearchDestinationsComponent implements OnInit {
       .subscribe(destinations => this.destinations = destinations);
   }
 
+  private searchDestinationsByArticle() {
+    this.destinationService.getDestinationByArticle(this.article)
+      .subscribe(destinations => this.destinations = destinations);
+  }
+
   onSubmit() {
     this.searchDestinations();
     this.searchDestinationsByName();
+    this.searchDestinationsByArticle();
   }
 }

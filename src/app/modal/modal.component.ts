@@ -14,6 +14,7 @@ export class ModalComponent implements OnInit {
   @Output() closeClickingOutEmitter = new EventEmitter();
   show = false;
   clickedImg: string;
+  clickedImgAlt: string;
 
   constructor() { }
 
@@ -49,6 +50,7 @@ export class ModalComponent implements OnInit {
       this.show = !this.show;
       // La source de l'image cliquée sera insérée dans l'attribut src de l'image modale
       this.clickedImg = event.target.src;
+      this.clickedImgAlt = event.target.alt;
       return this.clickedImg;
   }
 }

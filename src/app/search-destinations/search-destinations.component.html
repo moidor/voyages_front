@@ -6,12 +6,16 @@
       <input appHighlight type="text" class="form-control" id="year" required [(ngModel)]="year" name="year">
     </div>
     <div class="form-group">
-      <label for="year">Titre : </label>
+      <label for="title">Titre : </label>
       <input appHighlight type="text" class="form-control" id="name" required [(ngModel)]="title" name="name">
+    </div>
+    <div class="form-group">
+      <label for="article">Mots-clés : </label>
+      <input appHighlight type="text" class="form-control" id="article" required [(ngModel)]="article" name="article">
     </div>
 
     <div class="btn-group">
-      <button type="submit" class="btn btn-success">Submit</button>
+      <button type="submit" class="btn btn-success">Rechercher</button>
     </div>
   </form>
 </div>
@@ -21,3 +25,4 @@
     <img [src]="destination.image" alt="photo_destination">
   </li>
 </ul>
+
