@@ -1,9 +1,15 @@
-<p>Aujourd'hui, nous sommes le {{ today | date: 'd MMMM y' //`fr-FR`}}.</p>
-<div id="clocks">
-    <p id="tokyo_time"></p>
-    <p id="losAngeles_time"></p>
-    <p id="newDelhi_time"></p>
-    <p>{{ displayTimeMontreal }}</p>
-    <p>{{ displayTimeHonolulu }}</p>
+<div id="calendar">
+    <div id="verticalYear">{{today | date: 'y' //`fr-FR`}}</div> 
+    <div id="dayAndMonth">
+        <p>{{ today | date: 'd' //`fr-FR`}}</p>
+        <p>{{ today | date: 'MMMM' //`fr-FR`}}</p>
+    </div>
 </div>
 
+<div id="clocks">
+    <p [innerHTML]="displayTimeTokyo | safe: 'html'">{{ displayTimeTokyo }}</p>
+    <p [innerHTML]="displayTimeLosAngeles | safe: 'html'">{{ displayTimeLosAngeles }}</p>
+    <p [innerHTML]="displayTimeNewDelhi | safe: 'html'">{{ displayTimeNewDelhi }}</p>
+    <p [innerHTML]="displayTimeMontreal | safe: 'html'">{{ displayTimeMontreal }}</p>
+    <p [innerHTML]="displayTimeHonolulu | safe: 'html'">{{ displayTimeHonolulu }}</p>
+</div>

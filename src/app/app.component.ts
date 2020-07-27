@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Voyages autour du monde';
+  nightMode = false;
+
+  activateNightMode() {
+    this.nightMode = !this.nightMode;
+    if (!this.nightMode) {
+      return 'nightMode';
+    }
+  }
 }

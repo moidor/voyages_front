@@ -1,6 +1,10 @@
 <app-header></app-header>
-<div style="padding: 20px;">
+<div style="padding: 20px;" [ngClass]="{'nightModeClass': nightMode === true}">
   <h2>{{title}}</h2>
+  <button class="btn" (click)="activateNightMode()" 
+          [ngClass]="{'btn-light': nightMode === true, 'btn-dark': nightMode === false}">
+    {{ !nightMode ? 'Mode nuit' : 'Mode jour' }}
+  </button>
   <nav>
     <p><a routerLink="home" routerLinkActive="active">Accueil</a></p>
     <p><a routerLink="galeries" routerLinkActive="active">Galeries</a></p>

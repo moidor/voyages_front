@@ -28,6 +28,11 @@ a:hover {
   color: rgb(21, 116, 116);
 }
 
+.nightModeClass {
+  background-color: black;
+  color: gold;
+}
+
 /*#galerie {
   background-image: url("../../src/assets/img/imgNav/newspaper-943004_640.jpg");
   background-size: cover;

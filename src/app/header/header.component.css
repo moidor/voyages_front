@@ -2,3 +2,21 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+#calendar {
+    display: flex;
+}
+
+#verticalYear {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+#dayAndMonth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
