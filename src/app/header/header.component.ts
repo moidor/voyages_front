@@ -66,36 +66,43 @@ export class HeaderComponent implements OnInit {
     if (minutes < 60) {
       minutes = minutes;
     } else {
-      heure = heure + 1;
       minutes = minutes - 60;
     }
-    return heure && minutes;
+    return heure + 1 && minutes;
+  }
+
+  ajoutHeure(minutes: number, heure: number) {
+    if (minutes >= 60) {
+      heure = heure + 1;
+    }
+    return heure;
   }
 
   intervalHandler(city: string, decalageHoraire: number, decalageHoraireMinutes: number) {
     this.decalageHoraire = decalageHoraire;
     this.decalageHoraireMinutes = decalageHoraireMinutes;
     const day = new Date();
-
+    let hours = day.getHours() + this.decalageHoraire;
+    let minutes = day.getMinutes() + this.decalageHoraireMinutes;
+    // Formatage des secondes
     let secondes = day.getSeconds();
     secondes = this.ajoutZeroDevant(secondes);
-
-    let hours = day.getHours() + this.decalageHoraire;
-    hours = this.passerAMinuit(hours);
-    hours = this.ajoutZeroDevant(hours);
-
-    let minutes = day.getMinutes() + this.decalageHoraireMinutes;
+    // Formatage des minutes avec l'ajout des 30 minutes pour New Delhi
     minutes = this.ajout30Minutes(minutes, hours);
     minutes = this.ajoutZeroDevant(minutes);
+// Formatage des heures avec le passage à minuit ainsi que l'heure en plus pour New Delhi
+    hours = this.passerAMinuit(hours);
+    hours = this.ajoutHeure(minutes, hours);
+    hours = this.ajoutZeroDevant(hours);
 
     const result = (heure: number) => {
       if (heure > 6 && heure < 19) {
-        return `<div class="alert alert-warning" role="alert">
+        return `<div class="alert alert-warning" role="alert" style="width: 180px">
                   <h5 class="alert-heading">${city}</h5>
                   ${hours}:${minutes}:${secondes}
                 </div>`;
       } else {
-        return `<div class="alert alert-primary" role="alert">
+        return `<div class="alert alert-primary" role="alert" style="width: 180px">
                   <h5 class="alert-heading">${city}</h5>
                   ${hours}:${minutes}:${secondes}
                 </div>`;
