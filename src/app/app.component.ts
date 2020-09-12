@@ -11,8 +11,8 @@ export class AppComponent {
 
   activateNightMode() {
     this.nightMode = !this.nightMode;
-    if (!this.nightMode) {
-      return 'nightMode';
-    }
+    // if (!this.nightMode) {
+    //   return 'nightMode';
+    // }
   }
 }

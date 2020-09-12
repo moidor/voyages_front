@@ -5,18 +5,37 @@
 
 #calendar {
     display: flex;
+    height: 120px;
+    width: 180px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 15px;
+    color: #F3A712;
+    background-color: #29335C;
+    font-size: large;
 }
 
 #verticalYear {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     writing-mode: vertical-rl;
     text-orientation: mixed;
+    width: 30%;
+    background-color: #F3A712;
+    color: #29335C;
 }
 
 #dayAndMonth {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 70%;
 }
+
+/* $color-background: #669BBC
+$color-primary: #29335C
+$color-secondary: #F3A712
+$color-shadow: rgba(0, 0, 0, 0.27)
+$color-rings: #fff */

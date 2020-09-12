@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
 
   // Appel de la méthode setInterval pour les 5 villes
   tokyo = setInterval(() => {
-    return this.displayTimeTokyo = this.intervalHandler('Tokyo', 8, 0);
+    return this.displayTimeTokyo = this.intervalHandler('Tokyo', 7, 0);
   }, 1000);
 
   losAngeles = setInterval(() => {
@@ -99,11 +99,13 @@ export class HeaderComponent implements OnInit {
       if (heure > 6 && heure < 19) {
         return `<div class="alert alert-warning" role="alert" style="width: 180px">
                   <h5 class="alert-heading">${city}</h5>
+                  <img src="../../assets/img/soleil.png" alt="">
                   ${hours}:${minutes}:${secondes}
                 </div>`;
       } else {
         return `<div class="alert alert-primary" role="alert" style="width: 180px">
                   <h5 class="alert-heading">${city}</h5>
+                  <img src="../../assets/img/lune.png" alt="">
                   ${hours}:${minutes}:${secondes}
                 </div>`;
       }
